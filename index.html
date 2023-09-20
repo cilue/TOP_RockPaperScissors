@@ -1,18 +1,23 @@
 <script>
     function getComputerChoice() {
-        let choice;
+        let computerChoice;
         let num = Math.floor(Math.random() * 3)
         if (num == 0)  {
-            choice = "Rock"
+            computerChoice = "rock"
         }
         else if (num == 1) {
-            choice = "Paper";
+            computerChoice = "paper";
         }
         else {
-            choice = "Scissors";
+            computerChoice = "scissors";
         }
-        return choice;
+        return computerChoice;
     }
 
     console.log(getComputerChoice());
+
+    let playerSelection = prompt("Rock, Paper or Scissors?: ").toLowerCase();
+
+    console.log(playerSelection);
+
 </script>
