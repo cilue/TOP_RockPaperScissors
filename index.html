@@ -14,10 +14,32 @@
         return computerChoice;
     }
 
-    console.log(getComputerChoice());
+    //console.log(getComputerChoice());
 
     let playerSelection = prompt("Rock, Paper or Scissors?: ").toLowerCase();
 
-    console.log(playerSelection);
+    //console.log(playerSelection);
+
+    let computerSelection = getComputerChoice();
+
+    function playRound(playerSelection, computerSelection) {
+        let message;
+        if (playerSelection === computerSelection.toLowerCase()) {
+            message = "It's a tie!"
+        }
+        else if (
+            (playerSelection === "rock" && computerSelection === "scissors") ||
+            (playerSelection === "scissors" && computerSelection === "paper") ||
+            (playerSelection === "paper" && computerSelection === "rock")
+        ) {
+            message = `You win! ${playerSelection} beats ${computerSelection}`
+        }
+        else {
+            message = `You lose! ${computerSelection} beats ${playerSelection}`
+        }
+        return message; 
+    }
+
+    console.log(playRound(playerSelection, computerSelection));
 
 </script>
